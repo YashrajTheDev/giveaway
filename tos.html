@@ -6,60 +6,98 @@
     <title>TOS | GiveAway Bot</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #0f172a; color: white; font-family: 'Inter', sans-serif; }
-        .blur-bg { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); filter: blur(100px); opacity: 0.15; }
+        body { background-color: #09090b; color: white; font-family: 'Outfit', sans-serif; overflow-x: hidden; }
+        .glow-orb-2 { position: absolute; top: -10%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(168,85,247,0.15) 0%, rgba(0,0,0,0) 70%); filter: blur(60px); z-index: -1; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .glass-nav { background: rgba(9, 9, 11, 0.7); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
     </style>
 </head>
-<body class="overflow-x-hidden min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col">
 
-    <!-- Background Decor -->
-    <div class="fixed top-0 right-0 w-64 h-64 blur-bg -z-10"></div>
+    <div class="glow-orb-2"></div>
 
-    <!-- Navbar -->
-    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto w-full">
-        <div class="text-2xl font-bold tracking-tighter text-indigo-400">GIVEAWAY</div>
-        <div class="hidden md:flex space-x-8 text-gray-300 font-medium">
-            <a href="index.html" class="hover:text-white transition">Home</a>
-            <a href="commands.html" class="hover:text-white transition">Commands</a>
-            <a href="index.html#features" class="hover:text-white transition">Features</a>
-            <a href="tos.html" class="text-white font-semibold transition">TOS</a>
+    <!-- Sticky Glass Navbar -->
+    <nav class="fixed w-full top-0 z-50 glass-nav">
+        <div class="flex justify-between items-center p-5 max-w-7xl mx-auto">
+            <div class="text-3xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-500">
+                <i class="fas fa-gift mr-2"></i>GIVEAWAY
+            </div>
+            <div class="hidden md:flex space-x-8 text-gray-300 font-medium">
+                <a href="index.html" class="hover:text-indigo-400 transition hover:-translate-y-0.5 inline-block">Home</a>
+                <a href="commands.html" class="hover:text-indigo-400 transition hover:-translate-y-0.5 inline-block">Commands</a>
+                <a href="index.html#features" class="hover:text-indigo-400 transition hover:-translate-y-0.5 inline-block">Features</a>
+                <a href="tos.html" class="text-white font-semibold transition hover:-translate-y-0.5 inline-block">TOS</a>
+            </div>
+            <a href="https://discord.com/api/oauth2/authorize?client_id=755468378549911663&permissions=268823665&scope=bot%20applications.commands" target="_blank" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 px-7 py-2.5 rounded-xl font-bold shadow-[0_0_20px_rgba(99,102,241,0.4)] transition transform hover:scale-105">
+                Invite Bot
+            </a>
         </div>
-        <a href="https://discord.com/api/oauth2/authorize?client_id=755468378549911663&permissions=268823665&scope=bot%20applications.commands" target="_blank" class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-full font-semibold transition">Invite Bot</a>
     </nav>
 
     <!-- Content -->
-    <div class="max-w-4xl mx-auto py-20 px-6 flex-grow" data-aos="fade-up">
-        <h1 class="text-4xl md:text-5xl font-bold mb-10 border-b border-gray-700 pb-4">Terms of Service</h1>
-        <div class="space-y-8 text-gray-400 leading-relaxed text-lg">
-            <section>
-                <h2 class="text-2xl font-semibold text-white mb-3 text-indigo-300">1. Usage Agreement</h2>
-                <p>By inviting GiveAway Bot to your server, you agree to comply with Discord's Terms of Service and our internal guidelines. The bot is provided "as is" without any warranties.</p>
-            </section>
-            <section>
-                <h2 class="text-2xl font-semibold text-white mb-3 text-indigo-300">2. Data Privacy</h2>
-                <p>We respect your privacy. GiveAway Bot only stores necessary data to function, such as Guild IDs, Channel IDs, and User IDs involved in giveaways. No personal messaging data or server logs are collected or sold.</p>
-            </section>
-            <section>
-                <h2 class="text-2xl font-semibold text-white mb-3 text-indigo-300">3. Prohibited Activities</h2>
-                <p>Users are strictly prohibited from:</p>
-                <ul class="list-disc list-inside mt-2 space-y-2 ml-4">
-                    <li>Abusing the bot to create fraudulent or scam giveaways.</li>
-                    <li>Spamming bot commands resulting in API rate limits.</li>
-                    <li>Attempting to reverse-engineer or breach the bot's database.</li>
-                </ul>
-                <p class="mt-4 text-red-400 text-sm">Violation of these terms may lead to a permanent blacklist from utilizing our services.</p>
-            </section>
+    <div class="max-w-4xl mx-auto pt-40 pb-20 px-6 flex-grow relative z-10 w-full" data-aos="fade-up">
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-500">Terms of Service</h1>
+            <p class="text-gray-400 text-lg">Please read these terms carefully before using GiveAway Bot.</p>
+        </div>
+
+        <div class="space-y-6">
+            <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition">
+                <div class="flex items-center mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center mr-4">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">1. Usage Agreement</h2>
+                </div>
+                <p class="text-gray-400 leading-relaxed pl-14">By inviting GiveAway Bot to your server, you agree to comply with Discord's Terms of Service and our internal guidelines. The bot is provided "as is" without any warranties of uninterrupted service.</p>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition">
+                <div class="flex items-center mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center mr-4">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">2. Data Privacy</h2>
+                </div>
+                <p class="text-gray-400 leading-relaxed pl-14">We respect your privacy. GiveAway Bot only stores strictly necessary data to function, such as Guild IDs, Channel IDs, and User IDs involved in giveaways. <span class="text-white font-semibold">No personal messaging data or server logs are collected or sold.</span></p>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition border-red-500/20">
+                <div class="flex items-center mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center mr-4">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">3. Prohibited Activities</h2>
+                </div>
+                <div class="pl-14 text-gray-400 leading-relaxed">
+                    <p class="mb-3">Users are strictly prohibited from engaging in the following:</p>
+                    <ul class="list-none space-y-3">
+                        <li class="flex items-center"><i class="fas fa-times-circle text-red-400 mr-2"></i> Abusing the bot to create fraudulent or scam giveaways.</li>
+                        <li class="flex items-center"><i class="fas fa-times-circle text-red-400 mr-2"></i> Spamming bot commands resulting in API rate limits.</li>
+                        <li class="flex items-center"><i class="fas fa-times-circle text-red-400 mr-2"></i> Attempting to reverse-engineer or breach the bot's database.</li>
+                    </ul>
+                    <div class="mt-5 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-300 text-sm font-medium">
+                        <i class="fas fa-exclamation-triangle mr-2"></i> Violation of these terms may lead to a permanent blacklist from utilizing our services.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-gray-800 text-center text-gray-500 w-full mt-auto">
-        <p>&copy; 2026 GiveAway Bot. All rights reserved.</p>
-        <div class="mt-4 space-x-4">
-            <a href="https://discordg.wiki.gd/" target="_blank" class="hover:text-indigo-400 transition">Support Server</a>
-            <a href="tos.html" class="hover:text-white transition">Terms of Service</a>
-            <a href="#" class="hover:text-white transition">Privacy Policy</a>
+    <footer class="py-10 border-t border-white/10 relative z-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-gray-400 font-medium">
+                &copy; 2026 <span class="text-white font-bold">GiveAway</span>. All rights reserved.
+            </div>
+            <div class="flex space-x-6">
+                <a href="https://discordg.wiki.gd/" target="_blank" class="text-gray-400 hover:text-indigo-400 transition font-medium"><i class="fab fa-discord mr-1"></i> Support</a>
+                <a href="tos.html" class="text-white font-medium">Terms</a>
+                <a href="#" class="text-gray-400 hover:text-white transition font-medium">Privacy</a>
+            </div>
         </div>
     </footer>
 
