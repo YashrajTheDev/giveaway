@@ -5,34 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOS | GiveAway Bot</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         body { background-color: #0f172a; color: white; font-family: 'Inter', sans-serif; }
+        .blur-bg { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); filter: blur(100px); opacity: 0.15; }
     </style>
 </head>
-<body>
-    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto">
+<body class="overflow-x-hidden min-h-screen flex flex-col">
+
+    <!-- Background Decor -->
+    <div class="fixed top-0 right-0 w-64 h-64 blur-bg -z-10"></div>
+
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto w-full">
         <div class="text-2xl font-bold tracking-tighter text-indigo-400">GIVEAWAY</div>
-        <div class="space-x-8 text-gray-300">
+        <div class="hidden md:flex space-x-8 text-gray-300 font-medium">
             <a href="index.html" class="hover:text-white transition">Home</a>
+            <a href="commands.html" class="hover:text-white transition">Commands</a>
+            <a href="index.html#features" class="hover:text-white transition">Features</a>
+            <a href="tos.html" class="text-white font-semibold transition">TOS</a>
         </div>
+        <a href="https://discord.com/api/oauth2/authorize?client_id=755468378549911663&permissions=268823665&scope=bot%20applications.commands" target="_blank" class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-full font-semibold transition">Invite Bot</a>
     </nav>
 
-    <div class="max-w-4xl mx-auto py-20 px-6">
-        <h1 class="text-4xl font-bold mb-10">Terms of Service</h1>
-        <div class="space-y-6 text-gray-400 leading-relaxed">
+    <!-- Content -->
+    <div class="max-w-4xl mx-auto py-20 px-6 flex-grow" data-aos="fade-up">
+        <h1 class="text-4xl md:text-5xl font-bold mb-10 border-b border-gray-700 pb-4">Terms of Service</h1>
+        <div class="space-y-8 text-gray-400 leading-relaxed text-lg">
             <section>
-                <h2 class="text-xl font-semibold text-white mb-2">1. Usage Agreement</h2>
-                <p>By inviting GiveAway Bot, you agree to comply with Discord's Terms of Service and our internal guidelines.</p>
+                <h2 class="text-2xl font-semibold text-white mb-3 text-indigo-300">1. Usage Agreement</h2>
+                <p>By inviting GiveAway Bot to your server, you agree to comply with Discord's Terms of Service and our internal guidelines. The bot is provided "as is" without any warranties.</p>
             </section>
             <section>
-                <h2 class="text-xl font-semibold text-white mb-2">2. Data Privacy</h2>
-                <p>We only store necessary data such as Guild IDs and User IDs to facilitate the selection of winners. No personal data is sold.</p>
+                <h2 class="text-2xl font-semibold text-white mb-3 text-indigo-300">2. Data Privacy</h2>
+                <p>We respect your privacy. GiveAway Bot only stores necessary data to function, such as Guild IDs, Channel IDs, and User IDs involved in giveaways. No personal messaging data or server logs are collected or sold.</p>
             </section>
             <section>
-                <h2 class="text-xl font-semibold text-white mb-2">3. Prohibited Activities</h2>
-                <p>Abusing the bot to create fake giveaways or spamming commands may lead to a permanent ban from our services.</p>
+                <h2 class="text-2xl font-semibold text-white mb-3 text-indigo-300">3. Prohibited Activities</h2>
+                <p>Users are strictly prohibited from:</p>
+                <ul class="list-disc list-inside mt-2 space-y-2 ml-4">
+                    <li>Abusing the bot to create fraudulent or scam giveaways.</li>
+                    <li>Spamming bot commands resulting in API rate limits.</li>
+                    <li>Attempting to reverse-engineer or breach the bot's database.</li>
+                </ul>
+                <p class="mt-4 text-red-400 text-sm">Violation of these terms may lead to a permanent blacklist from utilizing our services.</p>
             </section>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-800 text-center text-gray-500 w-full mt-auto">
+        <p>&copy; 2026 GiveAway Bot. All rights reserved.</p>
+        <div class="mt-4 space-x-4">
+            <a href="https://discordg.wiki.gd/" target="_blank" class="hover:text-indigo-400 transition">Support Server</a>
+            <a href="tos.html" class="hover:text-white transition">Terms of Service</a>
+            <a href="#" class="hover:text-white transition">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
 </body>
 </html>
